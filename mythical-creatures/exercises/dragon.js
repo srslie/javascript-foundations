@@ -10,7 +10,7 @@ class Dragon {
   eat() {
     if (this.hungry && this.meals < 3) {
       this.meals += 1
-    } else if (this.meals === 3) {
+    } else if (this.meals >= 3) {
       this.hungry = false
     }
   };
