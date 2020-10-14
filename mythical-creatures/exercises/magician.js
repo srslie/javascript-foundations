@@ -1,9 +1,9 @@
 class Magician {
-  constructor(object) {
+  constructor(object = {}) {
     this.name = object.name;
-    this.hasTopHat = object.topHat || false;
-    this.confident = object.isConfident || false;
-    this.casts = object.casts || 1
+    this.topHat = (object.topHat === undefined) ? true : object.topHat;
+    this.confident = object.isConfident ? object.isConfident : false;
+    this.casts = object.casts ? object.casts : 0
   }
 
     incantation(words) {
@@ -15,17 +15,18 @@ class Magician {
         this.casts += 1
         return 'PULL RABBIT FROM TOP HAT'
       } else {
+        this.confident = true
         return 'PULL DOVE FROM SLEEVE'
       }
     };
 
     performShowStopper() {
       if (this.confident) {
-        return 'Oh no! Practice more before attempting this trick!'
-      } else {
         return 'WOW! The magician totally just sawed that person in half!'
+      } else {
+        return 'Oh no! Practice more before attempting this trick!'
       }
-    }
+    };
 
 }
 
