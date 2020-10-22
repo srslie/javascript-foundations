@@ -2,8 +2,8 @@ class Magician {
   constructor(object = {}) {
     this.name = object.name;
     this.topHat = (object.topHat === undefined) ? true : object.topHat;
-    this.confident = object.isConfident ? object.isConfident : false;
-    this.casts = object.casts ? object.casts : 0
+    this.confident = false;
+    this.casts = 0
   }
 
     incantation(words) {

@@ -5,36 +5,24 @@ class Centaur {
     this.cranky = object.cranky ? object.cranky : false;
     this.standing = object.standing ? object.standing : true;
     this.layingDown = object.layingDown ? object.layingDown : false;
-    this.activities = object.activities ? object.activities : 1 ;
-    this.rested = object.rested ? object.rested : true;
+    this.activities = 0
+    this.rested = true
   }
 
   shoot() {
-    if (this.cranky || this.layingDown) {
-     return 'NO!'
-   }  else if (this.activities === 2 ) {
-     this.activties++
-     this.cranky = true
-     this.rested = false
-     return 'Twang!!!'
-   } else {
-      this.activities++
-      return 'Twang!!!'
-   }
+    var noise = (this.cranky || this.layingDown) ? 'NO!' : 'Twang!!!'
+    this.activities++
+    this.cranky = this.activities > 2 || this.cranky
+    this.rested = this.activities <= 2
+    return noise
   }
 
   run() {
-    if (this.cranky || this.layingDown) {
-     return 'NO!'
-   }  else if (this.activities === 2 ) {
-    this.activties++
-    this.cranky = true
-    this.rested = false
-    return 'Clop clop clop clop!!!'
-   } else {
+    var sound = (this.cranky || this.layingDown) ? 'NO!' : 'Clop clop clop clop!!!'
     this.activities++
-    return 'Clop clop clop clop!!!'
-   }
+    this.cranky = this.activities > 2 || this.cranky
+    this.rested = this.activities <= 2
+    return sound
   }
 
   sleep() {

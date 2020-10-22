@@ -55,7 +55,6 @@ describe('Centaur', function() {
     centaur.shoot()
     centaur.run()
     centaur.shoot()
-
     assert.equal(centaur.cranky, true)
   });
 

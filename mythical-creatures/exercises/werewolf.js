@@ -1,23 +1,16 @@
 class Werewolf {
-  constructor(name, human = true, wolf = false, hungry = false, victims = [] ){
+  constructor(name) {
     this.name = name;
-    this.human = human;
-    this.wolf = wolf
-    this.hungry = hungry;
-    this.victims = victims
-
+    this.human = true;
+    this.wolf = false;
+    this.hungry = false;
+    this.victims = [];
   }
 
   transform() {
-    if (this.human) {
-      this.human = false;
-      this.wolf = true;
-      this.hungry = true;
-    } else {
-      this.human = true;
-      this.wolf = false;
-      this.hungry = false;
-    }
+      this.wolf = !this.wolf
+      this.human = !this.human
+      this.hungry = !this.hungry
   }
 
   eat(victim) {

@@ -17,7 +17,7 @@ class Direwolf {
     var index = this.starksToProtect.indexOf(stark)
     var dangerStark = this.starksToProtect.splice(index, 1)
     dangerStark[0].safe = false
-    if (this.starksToProtect.length === 0) {this.huntsWhiteWalkers = true}
+    this.huntsWhiteWalkers = (this.starksToProtect.length === 0)
   }
 }
 
