@@ -14,7 +14,9 @@ class Ogre {
 
   swingAt(human) {
     this.swings++
-    human.knockedOut = this.swings % 2 === 0
+    if (this.swings % 2 === 0) {
+      human.knockedOut = true
+    }
   }
 
   apologize(human) {

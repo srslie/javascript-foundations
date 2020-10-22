@@ -92,6 +92,29 @@ describe('Ogre', () => {
     assert.equal(ogre.swings, 1);
   });
 
+  it('knocked out humans remain knocked out', () => {
+    const ogre = new Ogre('Brak');
+    const human = new Human('Jane');
+
+    ogre.encounter(human);
+    ogre.encounter(human);
+    ogre.encounter(human);
+    ogre.encounter(human);
+    ogre.encounter(human);
+    ogre.encounter(human);
+
+    assert.equal(human.encounterCounter, 6);
+    assert.equal(ogre.swings, 2);
+    assert.equal(human.knockedOut, true);
+
+    ogre.encounter(human);
+    ogre.encounter(human);
+    ogre.encounter(human);
+
+    assert.equal(ogre.swings, 3);
+    assert.equal(human.knockedOut, true);
+  });
+
   it('ogre hits human every second time it swings', () => {
     const ogre = new Ogre('Brak');
     const human = new Human('Jane');
