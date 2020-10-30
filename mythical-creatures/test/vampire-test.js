@@ -1,5 +1,5 @@
 var assert = require('chai').assert;
-var Vampire = require('../exercises/vampire');
+var Vampire = require('../exercises/vampyre');
 
 describe('Vampire', function() {
 

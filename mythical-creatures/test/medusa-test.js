@@ -17,9 +17,12 @@ describe('Medusa', function() {
   it('should have a name', function() {
     // instantiate a Medusa object with your name as an argument
     // instantiate another Medusa object with someone else's name as an argument
-
+    var alice = new Medusa('Alice')
+    var gabrielle = new Medusa('Gabrielle')
     // assert that the first medusa's name is your name
     // assert that the second medusa's name is the other name
+    assert.equal(alice.name, 'Alice')
+    assert.equal(gabrielle.name, 'Gabrielle')
   });
 
   it('should start with no statues', function() {

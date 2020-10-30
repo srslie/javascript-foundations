@@ -1,6 +1,7 @@
 var assert = require('chai').assert;
+var forEachFunction = require('../lib/for-each')
 
-describe('For Each', function () {
+describe('forEachFunction', function () {
 
   it('should capitalize each string in the array', function () {
     var favoriteColors = [

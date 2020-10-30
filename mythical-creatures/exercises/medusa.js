@@ -1,7 +1,7 @@
 class Medusa {
-  constructor(name, statues = [])  {
+  constructor(name)  {
     this.name = name;
-    this.statues = statues;
+    this.statues = [];
   }
 
   stare(victim) {
